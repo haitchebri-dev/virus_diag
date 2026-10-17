@@ -23,7 +23,7 @@ def main():
 
     # 2. On prépare le patient de test (le même pour tous les modèles)
     nouveau_patient = get_patient_data()
-    print(f"👤 Données du nouveau patient (Age, Temp, Toux, Fatigue) : {nouveau_patient}\n")
+    print(f"Données du nouveau patient (Age, Temp, Toux, Fatigue) : {nouveau_patient}\n")
 
     # 3. On crée une liste avec tous nos modèles (C'est ça le Polymorphisme !)
     # La liste ne se soucie pas du type de modèle, tant qu'ils héritent de BaseModel
@@ -35,9 +35,8 @@ def main():
     # 4. On boucle sur chaque modèle
     for modele in modeles_a_tester:
         nom_modele = modele.__class__.__name__ # Récupère le nom de la classe (ex: "LogisticRegression")
-        print(f"==================================================")
-        print(f"🤖 TEST AVEC LE MODÈLE : {nom_modele}")
-        print(f"==================================================")
+        print(f"TEST AVEC LE MODÈLE : {nom_modele}")
+        
         
         # --- Phase d'entraînement ---
         entraineur = Trainer(modele)
@@ -52,7 +51,7 @@ def main():
         predicteur = ClinicalPredictor(model=modele)
         diagnostic = predicteur.diagnose(nouveau_patient)
         
-        print(f"🔴 Diagnostic final : {diagnostic}\n")
+        print(f"Diagnostic final : {diagnostic}\n")
 
 if __name__ == "__main__":
     main()
