@@ -29,4 +29,9 @@ class ModelTrainer:
 trainer = ModelTrainer(SVMStrategy())
 trained_model = trainer.execute(d)
 
-
+#amelioration
+#mettre en place un systeme de logging
+#mettre en place un systeme de monitoring
+#mettre en place un systeme de telechargement des donnees
+#mettre en place un systeme de telechargement des modeles
+#mettre en place un systeme de telechargement des donnees
